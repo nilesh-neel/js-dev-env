@@ -1,51 +1,55 @@
 {
-  "name": "js-dev-env",
-  "version": "1.0.0",
-  "description": "JavaScript Developmnet Environment.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nilesh-neel/js-dev-env.git"
-  },
-  "author": "nilesh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nilesh-neel/js-dev-env/issues"
-  },
-  "homepage": "https://github.com/nilesh-neel/js-dev-env#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-latest": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
-    "chalk": "^2.4.1",
-    "cheerio": "^1.0.0-rc.2",
-    "cross-env": "^5.2.0",
-    "eslint": "^5.4.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-watch": "^4.0.2",
-    "expres": "0.0.5",
-    "html-webpack-plugin": "^3.2.0",
-    "jsdom": "^12.0.0",
-    "localtunnel": "^1.9.0",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
-  },
-  "devDependencies": {
-    "mocha": "^5.2.0",
-    "nock": "^9.6.1",
-    "npm": "^6.4.0",
-    "nsp": "^3.2.1",
-    "numeral": "^2.0.6",
-    "open": "0.0.5",
-    "rimraf": "^2.6.2",
-    "webpack-dev-middleware": "^3.2.0",
-    "webpack-hot-middleware": "^2.22.3",
-    "webpack-md5-hash": "0.0.6"
-  }
+    "name": "js-dev-env",
+    "version": "1.0.0",
+    "description": "JavaScript Developmnet Environment.",
+    "main": "index.js",
+    "scripts": {
+        "prestart": "node buildScripts/startMessage.js",
+        "start": "npm-run-all --parallel open:src share",
+        "open:src": "node buildScripts/srcServer.js",
+        "localtunnel": "lt --port 3000 --subdomain neeo",
+        "share": "npm-run-all --parallel open:src localtunnel"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nilesh-neel/js-dev-env.git"
+    },
+    "author": "nilesh",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nilesh-neel/js-dev-env/issues"
+    },
+    "homepage": "https://github.com/nilesh-neel/js-dev-env#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-latest": "^6.24.1",
+        "babel-register": "^6.26.0",
+        "chai": "^4.1.2",
+        "chalk": "^2.4.1",
+        "cheerio": "^1.0.0-rc.2",
+        "cross-env": "^5.2.0",
+        "eslint": "^5.4.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-watch": "^4.0.2",
+        "express": "^4.16.3",
+        "html-webpack-plugin": "^3.2.0",
+        "jsdom": "^12.0.0",
+        "localtunnel": "^1.9.0",
+        "mocha": "^5.2.0",
+        "nock": "^9.6.1",
+        "npm": "^6.4.0",
+        "npm-run-all": "^4.1.3",
+        "nsp": "^3.2.1",
+        "numeral": "^2.0.6",
+        "open": "0.0.5",
+        "rimraf": "^2.6.2",
+        "webpack": "^4.17.1",
+        "webpack-cli": "^3.1.0",
+        "webpack-dev-middleware": "^3.2.0",
+        "webpack-hot-middleware": "^2.22.3",
+        "webpack-md5-hash": "0.0.6"
+    }
 }
